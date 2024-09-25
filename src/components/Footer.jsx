@@ -5,86 +5,96 @@ import {
   FaYoutube,
   FaFacebookF,
 } from "react-icons/fa";
+import Logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-green-900 text-white py-8">
+    <footer className="bg-green-600 text-black py-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-          {/* Left section - Company description */}
+          {/* Left section - Company Info */}
           <div>
-            <p className="mb-4">
-              We make onboarding new employees ridiculously easy. On day one,
-              they're ready to go. And retaining them is easier.
+            <img
+              src={Logo}
+              alt="Company Logo"
+              className="mb-4 mx-auto md:mx-0"
+            />
+            <p className="mb-2">PT. Lifelong Learning (Multimatics)</p>
+            <p className="text-sm">
+              Address: AXA Tower 37th Floor
+              <br />
+              Jln. Prof. Dr. Satrio Kav. 18, Setiabudi, Kuningan South Jakarta
+              <br />
+              12940 Indonesia
             </p>
-            <p>Follow us on:</p>
-            <div className="flex justify-center md:justify-start mt-2 space-x-4">
-              <a href="#" aria-label="LinkedIn">
+            <div className="flex justify-center md:justify-start mt-4 space-x-4">
+              <a href="#" aria-label="LinkedIn" className="hover:text-gray-400">
                 <FaLinkedin />
               </a>
-              <a href="#" aria-label="Instagram">
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="hover:text-gray-400"
+              >
                 <FaInstagram />
               </a>
-              <a href="#" aria-label="YouTube">
+              <a href="#" aria-label="YouTube" className="hover:text-gray-400">
                 <FaYoutube />
               </a>
-              <a href="#" aria-label="Facebook">
+              <a href="#" aria-label="Facebook" className="hover:text-gray-400">
                 <FaFacebookF />
               </a>
             </div>
           </div>
 
-          {/* Middle section - Navigation links */}
-          <div className="flex justify-center md:justify-start">
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="hover:underline">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Why Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Deals
-                </a>
-              </li>
-            </ul>
+          {/* Contact Section */}
+          <div>
+            <h4 className="font-bold mb-4">CONTACT US</h4>
+            <p className="mb-2">Email: info@multimatics.co.id</p>
+            <p className="mb-2">Phone: +6221 300 56 123</p>
+            <p>Fax: +6221 300 56 124</p>
           </div>
 
-          {/* Right section - More Navigation links */}
-          <div className="flex justify-center md:justify-start">
+          {/* Downloads & Others */}
+          <div>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:underline">
-                  Service
-                </a>
+                <Link to="/" className="hover:underline">
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
-                  Case Studies
-                </a>
+                <Link to="/#program" className="hover:underline">
+                  Programs
+                </Link>
+                {/* <a href="#" className="hover:underline">
+                  Programs
+                </a> */}
               </li>
               <li>
-                <a href="#" className="hover:underline">
-                  Plan
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  Testimonial
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
+                <Link to="/#faq" className="hover:underline">
                   FAQ
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/#contact" className="hover:underline">
+                  Our Contact
+                </Link>
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Copyright Section */}
+        <div className="text-center mt-6">
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} Multimatics. All rights reserved.
+            |{" "}
+            <a href="#" className="hover:underline">
+              Sitemap
+            </a>
+          </p>
         </div>
       </div>
     </footer>
