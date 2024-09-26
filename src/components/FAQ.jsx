@@ -1,6 +1,8 @@
-import React from "react";
+import { useState } from "react";
 
 function FAQ() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   const faqs = [
     {
       question:
@@ -35,23 +37,44 @@ function FAQ() {
     },
   ];
 
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <section id="faq" className="py-10 bg-white">
-      <div className="container mx-auto px-4 md:px-0">
-        {/* Section Title */}
-        <h2 className="text-4xl font-bold mb-8 text-left text-green-600">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold mb-8 text-center text-green-600">
           Frequently Asked Questions
         </h2>
 
-        {/* FAQ Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-gray-100 p-6 rounded-lg shadow-lg hover:bg-green-50 hover:shadow-xl transition duration-300 ease-in-out"
-            >
-              <h3 className="font-bold text-lg mb-2">{faq.question}</h3>
-              <p>{faq.answer}</p>
+            <div key={index} className="border-b">
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full text-left py-4 flex justify-between items-center focus:outline-none"
+              >
+                <span
+                  className={`font-semibold text-lg ${
+                    activeIndex === index ? "text-orange-600" : ""
+                  }`}
+                >
+                  {faq.question}
+                </span>
+                <span className="ml-4">
+                  {activeIndex === index ? "-" : "+"}
+                </span>
+              </button>
+              <div
+                className={`overflow-hidden transition-max-height duration-500 ease-in-out ${
+                  activeIndex === index ? "max-h-screen" : "max-h-0"
+                }`}
+              >
+                <div className="pb-4 pl-4 text-gray-700">
+                  <p>{faq.answer}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
