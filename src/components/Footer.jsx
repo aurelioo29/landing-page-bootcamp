@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import {
   FaLinkedin,
   FaInstagram,
@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-green-600 text-black py-8">
+    <footer className="bg-gray-700 text-white py-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Left section - Company Info */}
@@ -29,20 +29,36 @@ function Footer() {
               12940 Indonesia
             </p>
             <div className="flex justify-center md:justify-start mt-4 space-x-4">
-              <a href="#" aria-label="LinkedIn" className="hover:text-gray-400">
+              <a
+                href="https://id.linkedin.com/in/multimaticsid"
+                target="_blank"
+                aria-label="LinkedIn"
+                className="hover:text-gray-400"
+              >
                 <FaLinkedin />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/multimatics/"
+                target="_blank"
                 aria-label="Instagram"
                 className="hover:text-gray-400"
               >
                 <FaInstagram />
               </a>
-              <a href="#" aria-label="YouTube" className="hover:text-gray-400">
+              <a
+                href="https://www.youtube.com/user/multimaticsID"
+                target="_blank"
+                aria-label="YouTube"
+                className="hover:text-gray-400"
+              >
                 <FaYoutube />
               </a>
-              <a href="#" aria-label="Facebook" className="hover:text-gray-400">
+              <a
+                href="https://www.facebook.com/multimatics/"
+                target="_blank"
+                aria-label="Facebook"
+                className="hover:text-gray-400"
+              >
                 <FaFacebookF />
               </a>
             </div>
@@ -68,9 +84,6 @@ function Footer() {
                 <Link to="/#program" className="hover:underline">
                   Programs
                 </Link>
-                {/* <a href="#" className="hover:underline">
-                  Programs
-                </a> */}
               </li>
               <li>
                 <Link to="/#faq" className="hover:underline">
