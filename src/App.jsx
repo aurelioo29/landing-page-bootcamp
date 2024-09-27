@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom"; // Import useLocation
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
