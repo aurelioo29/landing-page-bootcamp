@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import heroImage from "../assets/header.png";
 
 function Hero() {
@@ -23,7 +23,7 @@ function Hero() {
   return (
     <section
       id="home"
-      className="flex flex-col md:flex-row items-center justify-between bg-white py-16 px-8 md:px-16 lg:px-32 pt-48"
+      className="flex flex-col md:flex-row items-center justify-between bg-white py-16 px-8 md:px-16 lg:px-32 pt-28"
     >
       {/* Left Side - Text */}
       <div className="md:w-1/2 text-left">
@@ -33,7 +33,7 @@ function Hero() {
         <p className="text-gray-700 mt-4">
           Join our immersive bootcamp designed for aspiring Data Analytics, Data
           Science, and Data Engineering experts. Gain the skills to thrive in
-          today's data-driven world.
+          today&apos;s data-driven world.
         </p>
 
         {/* Call to Action Button */}
