@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const navigate = useNavigate(); // Initialize the navigate function
 
   // Toggle Scroll-to-Top button visibility based on scroll position
   useEffect(() => {
@@ -22,16 +21,11 @@ function Navbar() {
     };
   }, []);
 
-  // Scroll to top and navigate to home when the button is clicked
-  const scrollToTopAndNavigate = () => {
+  const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-    // Navigate to home after a short delay to allow scrolling to finish
-    setTimeout(() => {
-      navigate("/"); // Redirect to the home page
-    }, 300); // Adjust the delay if needed
   };
 
   return (
@@ -111,7 +105,7 @@ function Navbar() {
       {/* Scroll-to-Top Button */}
       {showScrollTop && (
         <button
-          onClick={scrollToTopAndNavigate} // Use the new function
+          onClick={scrollToTop} // Use the modified function
           className="fixed bottom-8 right-8 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-500 focus:outline-none z-50"
           aria-label="Scroll to top"
         >
